@@ -1,0 +1,18 @@
+Description: Cria Bucket no s3
+
+Resources:
+  Buckets3:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: bucket-project-data-engineer-t
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: True
+        BlockPublicPolicy: True
+        IgnorePublicAcls: True
+        RestrictPublicBuckets: True
+
+
